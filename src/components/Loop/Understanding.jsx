@@ -4,7 +4,7 @@ function Understanding() {
 
     return (
         <>
-        
+            <h1>Understanding</h1>
         </>
     );
 }
