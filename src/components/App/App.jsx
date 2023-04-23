@@ -7,6 +7,7 @@ import Understanding from '../Loop/Understanding.jsx';
 import Support from '../Loop/Support.jsx';
 import Comments from '../Loop/Comments.jsx';
 import Review from '../Loop/Review.jsx';
+import Loop from '../Loop/Loop.jsx';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/review">
           <Review />
+        </Route>
+        <Route exact path ="/loop">
+          <Loop />
         </Route>
       </Router>
     </div>
