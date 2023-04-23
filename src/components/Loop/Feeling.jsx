@@ -1,8 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function Feeling() {
     //setting up dispatch to send value to redux
     const dispatch = useDispatch();
+    //settig up history to send user to next page
+    const history = useHistory();
+    const feeling = useSelector(store => store.feelingValue);
     
     const handleSelection = (event) => {
         const action = {
@@ -10,6 +14,16 @@ function Feeling() {
             payload: event.target.value,
         }
         dispatch(action);
+    }
+
+    //validation and history push
+    const nextPage = () => {
+        if (feeling !== '') {
+            history.push('/understanding');
+        } else {
+            alert('Please select an option.');
+        }
+        
     }
 
     return (
@@ -25,6 +39,7 @@ function Feeling() {
                     I read the news and am insufferably sad!
                 </option>
             </select>
+            <button onClick={nextPage}>Next</button>
         </>
     );
 }
