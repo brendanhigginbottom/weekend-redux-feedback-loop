@@ -11,6 +11,13 @@ import logger from 'redux-logger';
 //Reducers
 
 // Feeling Reducer
+const feelingValue = (state = 'test', action) => {
+    if (action.type === 'SET_FEELING') {
+        return action.payload;
+    }
+
+    return state;
+};
 
 // Understanding Reducer
 
@@ -23,6 +30,7 @@ const storeInstance = createStore(
     combineReducers(
         {
             // reducers added to store here
+            feelingValue
         }
     ),
     applyMiddleware(logger)
