@@ -12,7 +12,7 @@ import logger from 'redux-logger';
 
 // Feeling Reducer
 
-// Understanding Reducerg
+// Understanding Reducer
 
 // Support Reducer
 
