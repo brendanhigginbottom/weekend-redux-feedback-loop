@@ -14,6 +14,14 @@ function Support() {
         dispatch(action);
     }
 
+    const nextPage = () => {
+        if (support !== '') {
+            history.push('/comments');
+        } else {
+            alert('Please pick a color correlating to your level of support!');
+        }
+    }
+
 
     return (
         <>
@@ -23,6 +31,8 @@ function Support() {
                 <label htmlFor="support">Describe your suport as a color:</label><br />
                 <input onChange={handleSupport}type="color" id="support" name="support" />
             </form>
+            <br />
+            <button onClick={nextPage}>Next</button>
         </>
     );
 }
