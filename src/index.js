@@ -37,7 +37,8 @@ const storeInstance = createStore(
     combineReducers(
         {
             // reducers added to store here
-            feelingValue
+            feelingValue,
+            understandingValue,
         }
     ),
     applyMiddleware(logger)
