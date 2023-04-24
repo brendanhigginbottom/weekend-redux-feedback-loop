@@ -1,6 +1,12 @@
-
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Support() {
+
+    const testValue = (event) => {
+        console.log(event.target.value);
+    }
+
 
     return (
         <>
@@ -8,7 +14,7 @@ function Support() {
             <br />
             <form>
                 <label htmlFor="support">Describe your suport as a color:</label><br />
-                <input type="color" id="support" name="support" />
+                <input onChange={testValue}type="color" id="support" name="support" />
             </form>
         </>
     );
