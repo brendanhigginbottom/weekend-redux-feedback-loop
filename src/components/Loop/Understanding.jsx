@@ -13,7 +13,6 @@ function Understanding() {
             <br />
             <input type="radio" id="over" value="Over standing" />
             <label htmlFor="over">Over standing</label>
-
         </>
     );
 }

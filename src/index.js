@@ -20,6 +20,13 @@ const feelingValue = (state = '', action) => {
 };
 
 // Understanding Reducer
+const understandingValue = (state = '', action) => {
+    if (action.type === 'SET_UNDERSTANDING') {
+        return action.payload;
+    }
+
+    return state;
+};
 
 // Support Reducer
 
