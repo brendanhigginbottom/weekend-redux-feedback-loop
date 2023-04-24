@@ -38,6 +38,13 @@ const supportValue = (state = '', action) => {
 }
 
 // Comments Reducer
+const commentsValue = (state = '', action) => {
+    if (action.type === 'SET_COMMENTS') {
+        return action.payload;
+    }
+
+    return state;
+}
 
 // Redux store
 const storeInstance = createStore(
@@ -47,6 +54,7 @@ const storeInstance = createStore(
             feelingValue,
             understandingValue,
             supportValue,
+            commentsValue,
         }
     ),
     applyMiddleware(logger)
