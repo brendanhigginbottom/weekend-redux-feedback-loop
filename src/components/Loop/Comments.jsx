@@ -14,10 +14,15 @@ function Comments() {
         dispatch(action);
     }
 
+    const nextPage = (event) => {
+        event.preventDefault();
+        history.push('/review');
+    };
+
     return (
         <>
             <h1>Comments?</h1>
-            <form>
+            <form onSubmit={nextPage}>
                 <textarea onChange={handleComments} rows="4" cols="50" placeholder="Leave a comment..."></textarea>
                 <br />
                 <input type="submit" /> 
