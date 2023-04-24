@@ -29,6 +29,13 @@ const understandingValue = (state = '', action) => {
 };
 
 // Support Reducer
+const supportValue = (state = '', action) => {
+    if (action.type === 'SET_SUPPORT') {
+        return action.payload;
+    }
+
+    return state;
+}
 
 // Comments Reducer
 
@@ -39,6 +46,7 @@ const storeInstance = createStore(
             // reducers added to store here
             feelingValue,
             understandingValue,
+            supportValue,
         }
     ),
     applyMiddleware(logger)
