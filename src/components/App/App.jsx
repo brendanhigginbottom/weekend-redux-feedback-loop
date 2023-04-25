@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Feeling from '../Loop/Feeling.jsx';
@@ -14,8 +13,8 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
+        <h1 className='App-title'>A survey</h1>
+        <h4>of mostly nonsense</h4>
       </header>
       <Router>
         {/* Landing page is first question in loop, Feeling. */}
