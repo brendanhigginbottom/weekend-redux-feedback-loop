@@ -18,6 +18,8 @@ import axios from 'axios';
 const feelingValue = (state = '', action) => {
     if (action.type === 'SET_FEELING') {
         return action.payload;
+    } else if (action.type === 'CLEAR_FORM') {
+        return state;
     }
 
     return state;
@@ -27,6 +29,8 @@ const feelingValue = (state = '', action) => {
 const understandingValue = (state = '', action) => {
     if (action.type === 'SET_UNDERSTANDING') {
         return action.payload;
+    } else if (action.type === 'CLEAR_FORM') {
+        return state;
     }
 
     return state;
@@ -36,6 +40,8 @@ const understandingValue = (state = '', action) => {
 const supportValue = (state = '', action) => {
     if (action.type === 'SET_SUPPORT') {
         return action.payload;
+    } else if (action.type === 'CLEAR_FORM') {
+        return state;
     }
 
     return state;
@@ -45,6 +51,8 @@ const supportValue = (state = '', action) => {
 const commentsValue = (state = '', action) => {
     if (action.type === 'SET_COMMENTS') {
         return action.payload;
+    } else if (action.type === 'CLEAR_FORM') {
+        return state;
     }
 
     return state;
