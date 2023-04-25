@@ -7,6 +7,10 @@ import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+//Imports for saga
+import createSagaMiddleware from 'redux-saga';
+import { takeEvery, put } from 'redux-saga/effects';
+import axios from 'axios';
 
 //Reducers
 
@@ -47,8 +51,22 @@ const commentsValue = (state = '', action) => {
 }
 
 //put saga
+function* postValues(action) {
+    //generator function for axios post request
+    try {
+        yield axios.post('/survey', action.payload);
+    } catch (error) {
+         console.log(`error in postValues${error}`);
+         alert('Something went wrong');
+    }
+}
 
 //root saga
+function* rootSaga() {
+    yield takeEvery('ADD_VALUES', postValues);
+}
+
+const sagaMiddleware = createSagaMiddleware();
 
 // Redux store
 const storeInstance = createStore(
@@ -61,10 +79,11 @@ const storeInstance = createStore(
             commentsValue,
         }
     ),
-    applyMiddleware(logger)
+    applyMiddleware(sagaMiddleware, logger)
 );
 
 //root saga to middleware
+sagaMiddleware.run(rootSaga);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
