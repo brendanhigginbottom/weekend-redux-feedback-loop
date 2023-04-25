@@ -7,6 +7,7 @@ function Review() {
     const support = useSelector(store => store.supportValue);
     const comments = useSelector(store => store.commentsValue);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const submitValues = () => {
         const action = {
@@ -19,6 +20,7 @@ function Review() {
             }
         };
         dispatch(action);
+        history.push('/loop');
     }
 
     return (
