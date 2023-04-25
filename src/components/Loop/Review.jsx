@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Review() {
@@ -6,9 +6,19 @@ function Review() {
     const understanding = useSelector(store => store.understandingValue);
     const support = useSelector(store => store.supportValue);
     const comments = useSelector(store => store.commentsValue);
+    const dispatch = useDispatch();
 
     const submitValues = () => {
-        
+        const action = {
+            type: 'ADD_VALUES',
+            payload: {
+                feeling: feeling,
+                understanding: understanding,
+                support: support,
+                comments: comments,
+            }
+        };
+        dispatch(action);
     }
 
     return (
