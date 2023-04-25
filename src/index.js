@@ -7,6 +7,9 @@ import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+//Imports for saga
+import { createSagaMiddleware } from 'redux-saga';
+import { takeEvery, put } from 'redux-saga/effects';
 
 //Reducers
 
