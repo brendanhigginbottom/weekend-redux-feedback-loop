@@ -7,6 +7,10 @@ function Review() {
     const support = useSelector(store => store.supportValue);
     const comments = useSelector(store => store.commentsValue);
 
+    const submitValues = () => {
+        
+    }
+
     return (
         <>
             <h1>Review</h1>
@@ -17,6 +21,7 @@ function Review() {
                 <p style={{color: `${support}` }}>Support: {support}</p>
                 <p>Comments: {comments}</p>
             </div>
+            <button onClick={submitValues}>Submit Survey</button>
         </>
     );
 }
