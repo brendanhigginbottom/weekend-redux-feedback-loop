@@ -19,7 +19,7 @@ const feelingValue = (state = '', action) => {
     if (action.type === 'SET_FEELING') {
         return action.payload;
     } else if (action.type === 'CLEAR_FORM') {
-        return state;
+        return '';
     }
 
     return state;
@@ -30,7 +30,7 @@ const understandingValue = (state = '', action) => {
     if (action.type === 'SET_UNDERSTANDING') {
         return action.payload;
     } else if (action.type === 'CLEAR_FORM') {
-        return state;
+        return '';
     }
 
     return state;
@@ -41,7 +41,7 @@ const supportValue = (state = '', action) => {
     if (action.type === 'SET_SUPPORT') {
         return action.payload;
     } else if (action.type === 'CLEAR_FORM') {
-        return state;
+        return '';
     }
 
     return state;
@@ -52,7 +52,7 @@ const commentsValue = (state = '', action) => {
     if (action.type === 'SET_COMMENTS') {
         return action.payload;
     } else if (action.type === 'CLEAR_FORM') {
-        return state;
+        return '';
     }
 
     return state;
