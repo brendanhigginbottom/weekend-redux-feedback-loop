@@ -14,7 +14,7 @@ function Review() {
             <div>
                 <p>Feeling: {feeling}</p>
                 <p>Standing: {understanding}</p>
-                <p>Support: {support}</p>
+                <p style={{color: `${support}` }}>Support: {support}</p>
                 <p>Comments: {comments}</p>
             </div>
         </>
