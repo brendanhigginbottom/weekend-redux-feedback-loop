@@ -46,6 +46,10 @@ const commentsValue = (state = '', action) => {
     return state;
 }
 
+//put saga
+
+//root saga
+
 // Redux store
 const storeInstance = createStore(
     combineReducers(
@@ -59,6 +63,8 @@ const storeInstance = createStore(
     ),
     applyMiddleware(logger)
 );
+
+//root saga to middleware
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
